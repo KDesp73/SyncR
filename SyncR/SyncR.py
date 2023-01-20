@@ -8,7 +8,7 @@ import shutil
 
 def createExe(userInput):
     with io.open("sync.py",'w',encoding='utf8') as f:
-        f.writelines(["from dirsync import sync\n", f"sync({userInput[0]}, {userInput[1]}, 'sync')"])
+        f.writelines(["from dirsync import sync\n", f"sync({userInput[0]}, {userInput[1]}, 'sync')\n", "\ninput(\"Press any key to continue...\")"])
         f.close()
 
     subprocess.run("pyinstaller --onefile sync.py", shell=True)
