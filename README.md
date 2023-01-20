@@ -15,8 +15,6 @@ An exe file is created which when run, syncs the selected folders.
 
 Contributions are always welcome!
 
-See `contributing.md` for ways to get started.
-
 Please adhere to this project's `code of conduct`.
 
 
