@@ -8,11 +8,11 @@ An exe file is created which when run, syncs the selected folders.
 ## Current Requirements
  * [Python 3](https://www.python.org/downloads/)
  * [dirsync](https://pypi.org/project/dirsync/) library - for directory synchronization or
- ```cmd
+ ```shell
  pip install dirsync
  ```
  * [pyinstaller](https://pypi.org/project/pyinstaller/) - for creating the exe file or
- ```cmd
+ ```shell
  pip install pyinstaller
  ```
 
