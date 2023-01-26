@@ -19,7 +19,7 @@ An exe file is created which when run, syncs the selected folders.
 
 ## Contributing
 
-Contributions are always welcome!
+Please report any issues you may find!
 
 Please adhere to this project's `code of conduct`.
 
