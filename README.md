@@ -15,6 +15,8 @@ An exe file is created which when run, syncs the selected folders.
  ```shell
  pip install pyinstaller
  ```
+ 
+ Then add the directory, into which the package was installed, in the PATH environment variables
 
 
 ## Contributing
