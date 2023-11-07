@@ -35,24 +35,24 @@ def createExe(userInput):
         f.close()
 
     subprocess.run("pyinstaller --onefile sync.py", shell=True)
-    print(f"sync.exe created at {Path.cwd()}\dist")
+    print(f"sync.exe created at {Path.cwd()}/dist")
     
 def clearDir():
     try:
-        print(f"{Path.cwd()}\sync.py")
-        os.remove(f"{Path.cwd()}\sync.py")
+        print(f"{Path.cwd()}/sync.py")
+        os.remove(f"{Path.cwd()}/sync.py")
     except OSError as e:
         print("Error: %s - %s." % (e.filename, e.strerror))
         
     try:
-        print(f"{Path.cwd()}\sync.spec")
-        os.remove(f"{Path.cwd()}\sync.spec")
+        print(f"{Path.cwd()}/sync.spec")
+        os.remove(f"{Path.cwd()}/sync.spec")
     except OSError as e:
         print("Error: %s - %s." % (e.filename, e.strerror))
         
     try:
         print(f"{Path.cwd()}\\build")
-        shutil.rmtree(f"{Path.cwd()}\\build")
+        shutil.rmtree(f"{Path.cwd()}/build")
     except OSError as e:
         print("Error: %s - %s." % (e.filename, e.strerror))
     
