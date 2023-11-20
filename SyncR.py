@@ -28,7 +28,7 @@ import os
 import subprocess
 import shutil
 
-slash = '/' if (os.name.__contains__("linux")) else '\\'
+slash = '/' if (os.name.__contains__("posix")) else '\\'
 
 def createExe(userInput):
     with io.open("sync.py", 'w', encoding='utf8') as f:
