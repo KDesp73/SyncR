@@ -6,18 +6,14 @@
 ### A python tool to synchronize 2 folders
 An exe file is created which when run, syncs the selected folders.
 
+## Requirements
 
-## Current Requirements
- * [Python 3](https://www.python.org/downloads/)
- * [dirsync](https://pypi.org/project/dirsync/) library - for directory synchronization or
- ```shell
- pip install dirsync
- ```
- * [pyinstaller](https://pypi.org/project/pyinstaller/) - for creating the exe file or
- ```shell
- pip install pyinstaller
- ```
- 
+To install requirements run:
+
+```sh
+pip install -r requirements.txt
+```
+
  Then add the directory, into which the package was installed, in the PATH environment variables
 
 

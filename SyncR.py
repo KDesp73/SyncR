@@ -69,7 +69,7 @@ def promt():
 
 
 print("==================SyncR==================")
-print("This tool creates an .exe file which syncs\n2 selected folders with a simple double click.")
+print("This tool creates an executable file which syncs\n2 selected folders with a simple double click.")
 print("\nBy KDesp73 - 2023\n\n")
 
 
