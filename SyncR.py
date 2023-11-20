@@ -68,15 +68,14 @@ def promt():
     return [source_path, target_path]
 
 
-print("==================SyncR==================")
-print("This tool creates an executable file which syncs\n2 selected folders with a simple double click.")
-print("\nBy KDesp73 - 2023\n\n")
+if __name__ == "__main__":
+    print("==================SyncR==================")
+    print("This tool creates an executable file which syncs\n2 selected folders with a simple double click.")
+    print("\nBy KDesp73 - 2023\n\n")
 
+    userInput = promt()
+    createExe(userInput)
+    clearDir()
 
-userInput = promt()
-createExe(userInput)
-clearDir()
-
-
-print("\n")
-input("Press any key to continue...")
+    print("\n")
+    input("Press any key to continue...")
