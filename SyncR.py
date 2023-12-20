@@ -27,30 +27,48 @@ import io
 import os
 import subprocess
 import shutil
+import sys
 
 slash = '/' if (os.name.__contains__("posix")) else '\\'
 
+
+def program(userInput):
+
+    program = f"""from dirsync import sync
+import sys\n
+
+src = \"{userInput[0]}\"
+target = \"{userInput[1]}\"
+
+if sys.argv.__len__() != 1 and (sys.argv[1] == \"-r\" or sys.argv[1] == \"--reverse\"):
+    src, target = target, src\n
+
+sync(src, target, 'sync')
+input(\"Press any key to continue...\")\n
+"""
+    return program
+
+
 def createExe(userInput):
     with io.open("sync.py", 'w', encoding='utf8') as f:
-        f.writelines(["from dirsync import sync\n", f"sync({userInput[0]}, {userInput[1]}, 'sync')\n", "\ninput(\"Press any key to continue...\")"])
+        f.writelines(program(userInput))
         f.close()
 
     subprocess.run("pyinstaller --onefile sync.py", shell=True)
-    print(f"sync.exe created at {Path.cwd()}/dist")
-    
+    print(f"sync executable created at {Path.cwd()}/dist")
+
+
 def clearDir():
     try:
         print(f"{Path.cwd()}{slash}sync.py")
         os.remove(f"{Path.cwd()}{slash}sync.py")
     except OSError as e:
         print("Error: %s - %s." % (e.filename, e.strerror))
-        
     try:
         print(f"{Path.cwd()}{slash}sync.spec")
         os.remove(f"{Path.cwd()}{slash}sync.spec")
     except OSError as e:
         print("Error: %s - %s." % (e.filename, e.strerror))
-        
     try:
         print(f"{Path.cwd()}{slash}build")
         shutil.rmtree(f"{Path.cwd()}{slash}build")
@@ -64,18 +82,23 @@ def promt():
 
     target_path = input("Target path: ")
     target_path = f"r\"{target_path}\""
- 
+
     return [source_path, target_path]
 
 
 if __name__ == "__main__":
-    print("==================SyncR==================")
-    print("This tool creates an executable file which syncs\n2 selected folders with a simple double click.")
-    print("\nBy KDesp73 - 2023\n\n")
+    if sys.argv.__len__() != 3:
+        print("==================SyncR==================")
+        print("This tool creates an executable file which syncs\n2 selected folders with a simple double click.")
+        print("\nBy KDesp73 - 2023\n\n")
 
-    userInput = promt()
+        userInput = promt()
+
+    else:
+        userInput = sys.argv[1:3]
+        print(userInput)
+
     createExe(userInput)
     clearDir()
-
     print("\n")
     input("Press any key to continue...")
