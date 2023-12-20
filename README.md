@@ -16,6 +16,18 @@ pip install -r requirements.txt
 
  Then add the directory, into which the package was installed, in the PATH environment variables
 
+## Run
+
+```sh
+python3 ./SyncR
+```
+
+or
+
+```sh
+python3 ./SyncR src_dir target_dir
+```
+
 ## Arguments
 
 - `-r` or `--reverse`: reverse syncronization for the two folders
