@@ -16,6 +16,11 @@ pip install -r requirements.txt
 
  Then add the directory, into which the package was installed, in the PATH environment variables
 
+## Arguments
+
+- `-r` or `--reverse`: reverse syncronization for the two folders
+
+
 
 ## Contributing
 
